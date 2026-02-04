@@ -20,11 +20,16 @@
   padding: 10px 0px;
   background: #04326b;
   color: #f4f4f4;
-
+ height: 70px;  
   position: fixed;     /* Fixes it to the viewport */
   top: 0;              /* Sticks it to the very top */
   width: 100%;         /* Ensures the blue background spans the full width */
   z-index: 1000;       /* Keeps it above other content, but below the hamburger */
+  border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+
+   
+   
 }
 .navbar .logo {
   margin-left: 10px; 
@@ -128,6 +133,7 @@
   .navbar {
     padding: 15px 40px;
     justify-content: space-between;
+     height: 90px;  
   }
 
   /* Logo size */
@@ -1373,9 +1379,153 @@ footer {
   font-size: 14px;        /* optional: smaller text */
   height: 50px;
 }
+/* ============================
+   FUTURE + FOOTER - RESPONSIVE SIZES
+=============================== */
 
+/* Medium screens - tablet (768px) */
+@media (min-width: 768px) {
+  .future {
+    padding: 80px 60px;
+    gap: 20px;
+  }
 
+  .future h2, .future .together {
+    font-size: 36px;
+    color: rgb(224, 221, 221);
+  }
 
+  .bottom-footer {
+    padding: 40px 60px;
+    gap: 40px;
+    min-height: 180px;
+  }
+
+  .logo-left img {
+    height: 120px;
+  }
+
+  .bottom-footer > div:not(.contact-center) {
+    margin: 0 20px;
+  }
+
+  .contact-center {
+    gap: 15px;
+  }
+
+  .contact-item img {
+    height: 50px;
+  }
+
+  .contact-text p,
+  .contact-text .sim-highlight {
+    font-size: 20px;
+  }
+
+  .quick-links p {
+    font-size: 24px;
+  }
+
+  .quick-links a {
+    font-size: 20px;
+    padding: 4px 2px;
+  }
+
+  footer {
+    font-size: 16px;
+    padding: 20px 60px;
+  }
+}
+
+/* Large screens - desktop (1280px) */
+@media (min-width: 1280px) {
+  .future {
+    padding: 100px 80px;
+    gap: 25px;
+  }
+
+  .future h2, .future .together {
+    font-size: 42px;
+  }
+
+  .bottom-footer {
+    padding: 50px 80px;
+    gap: 50px;
+    min-height: 200px;
+  }
+
+  .logo-left img {
+    height: 140px;
+  }
+
+  .contact-item img {
+    height: 55px;
+  }
+
+  .contact-text p,
+  .contact-text .sim-highlight {
+    font-size: 22px;
+  }
+
+  .quick-links p {
+    font-size: 26px;
+  }
+
+  .quick-links a {
+    font-size: 22px;
+    padding: 5px 3px;
+  }
+
+  footer {
+    font-size: 17px;
+    padding: 25px 80px;
+  }
+}
+
+/* Extra large screens - large desktop (1600px) */
+@media (min-width: 1600px) {
+  .future {
+    padding: 120px 100px;
+    gap: 30px;
+  }
+
+  .future h2, .future .together {
+    font-size: 48px;
+  }
+
+  .bottom-footer {
+    padding: 60px 100px;
+    gap: 60px;
+    min-height: 220px;
+  }
+
+  .logo-left img {
+    height: 160px;
+  }
+
+  .contact-item img {
+    height: 60px;
+  }
+
+  .contact-text p,
+  .contact-text .sim-highlight {
+    font-size: 24px;
+  }
+
+  .quick-links p {
+    font-size: 28px;
+  }
+
+  .quick-links a {
+    font-size: 24px;
+    padding: 6px 4px;
+  }
+
+  footer {
+    font-size: 18px;
+    padding: 30px 100px;
+  }
+}
 
 
 
@@ -2116,7 +2266,11 @@ footer {
    WHAT'S NEW SECTION
 ============================== */
 .what-is-new {
-  background: #ffffff;
+ background-image: url('../images/leadership-profiles-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;       /* makes it cover the whole section */
+  background-attachment: fixed; /* keeps it fixed while scrolling */
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -2332,11 +2486,15 @@ footer {
   flex-wrap: wrap;
   gap: 24px;                  /* spacing between cards */
   justify-content: center;
-  background: #ffffff;
+ background-image: url('../images/leadership-profiles-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;       /* makes it cover the whole section */
+  background-attachment: fixed; /* keeps it fixed while scrolling */
   padding: 50px 20px;         /* breathing space */
 
   flex-direction: column;     /* mobile: vertical stack */
-   max-width: 1500px;
+   
   margin: 0 auto;
 }
 
