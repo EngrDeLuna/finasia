@@ -87,3 +87,38 @@ slider.addEventListener('touchmove', (e) => {
   const walk = (x - startX) * 2;
   slider.scrollLeft = scrollLeft - walk;
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const charts = document.querySelectorAll('.circle-chart');
+
+    const animateChart = (chart) => {
+        const target = parseInt(chart.getAttribute('data-percent'));
+        const color = chart.style.getPropertyValue('--color');
+        const numberDisplay = chart.querySelector('.chart-number');
+        let count = 0;
+
+        const interval = setInterval(() => {
+            if (count >= target) {
+                clearInterval(interval);
+            } else {
+                count++;
+                chart.style.background = `conic-gradient(${color} ${count * 3.6}deg, #eee 0deg)`;
+                numberDisplay.innerText = count + "%";
+            }
+        }, 20);
+    };
+
+    // Trigger when visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateChart(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    charts.forEach(c => observer.observe(c));
+});
