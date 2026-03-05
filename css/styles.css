@@ -1655,13 +1655,16 @@ footer {
   }
 }
 
-
 .hero-about {
+  position: relative;   /* IMPORTANT */
+  overflow: hidden;     /* prevents video overflow */
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 16px;
+
   min-height: calc(100vh - 70px);
   margin-top: 70px;
   padding: 20px;
